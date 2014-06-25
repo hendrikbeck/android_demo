@@ -20,16 +20,17 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
-public class MainActivity extends ActionBarActivity implements RatingBar.OnRatingBarChangeListener {
+import io.murmio.android.sdk.Murm;
+
+public class MainActivity extends ActionBarActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar);
-        ratingBar.setOnRatingBarChangeListener(this);
-        StrictMode.ThreadPolicy threadPolicy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(threadPolicy);
+
+        Murm m = (Murm) findViewById(R.id.murm_view_example);
+        m.setUserId("My demo app test user");
     }
 
 
@@ -53,34 +54,4 @@ public class MainActivity extends ActionBarActivity implements RatingBar.OnRatin
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-        HttpClient httpClient = new DefaultHttpClient();
-        HttpPost httpPost = new HttpPost("http://murmio-playground.herokuapp.com/api/v1/murm/feedback");
-
-        JSONObject json = new JSONObject();
-        try {
-            json.accumulate("murm_id", "06bbb81e-a55c-4d8e-9dff-f4fd2e85d278");
-            json.accumulate("score", new Float(v).intValue());
-            json.accumulate("user", "Android user");
-            json.accumulate("transaction", "Android transaction");
-
-            StringEntity se = new StringEntity(json.toString());
-            httpPost.setEntity(se);
-            httpPost.setHeader("Accept", "application/json");
-            httpPost.setHeader("Content-Type", "application/json");
-            httpClient.execute(httpPost);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-    }
 }
