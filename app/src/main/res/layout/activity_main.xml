@@ -6,16 +6,27 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/abc_list_selector_disabled_holo_light">
 
 
-
-    <io.murmio.android.sdk.Murm
-        android:id="@+id/murm_view_example"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        murm.io:murm_id="06bbb81e-a55c-4d8e-9dff-f4fd2e85d278"
-        murm.io:user_id="User ID set from XML">
-    </io.murmio.android.sdk.Murm>
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Demo Screens"
+        android:id="@+id/textView" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Online shopping checkout"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:onClick="openCheckDemoActivity"
+        android:clickable="true" />
 </RelativeLayout>
