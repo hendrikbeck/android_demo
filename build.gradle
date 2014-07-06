@@ -5,12 +5,10 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.8.+'
+        classpath 'com.android.tools.build:gradle:0.10.+'
     }
 }
 
-allprojects {
-    repositories {
-        mavenCentral()
-    }
+repositories {
+    maven { url 'https://github.com/hendrikbeck/mvn-repo/raw/master/' }
 }
