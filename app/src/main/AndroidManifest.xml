@@ -12,7 +12,7 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light"
-            android:label="Demo Shop" >
+            android:label="murm.io Android SDK Demos" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
