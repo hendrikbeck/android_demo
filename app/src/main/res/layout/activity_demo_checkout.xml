@@ -47,7 +47,7 @@
                 android:id="@+id/murm_view_example"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                murm.io:murm_id="76331b0c-95f3-46bb-a495-c8a4ffcf805d"
+                murm.io:murm_id="3412a550-f05b-40b4-a713-1ec2e2870265"
                 android:layout_margin="20dp">
             </io.murmio.android.sdk.Murm>
 
